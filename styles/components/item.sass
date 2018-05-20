@@ -1,0 +1,29 @@
+.item
+  display: flex
+  flex-direction: row
+  align-items: center
+  position: relative
+  margin-bottom: 10px
+  border: 1px solid $item_border
+  border-radius: 3px
+  background-color: $item_bg
+  &:hover
+    background-color: $item_bg__hover
+  a
+    line-height: 40px
+    text-decoration: none
+    width: 100%
+    margin-left: 10px
+  .date
+    position: absolute
+    top: 0
+    right: 5px
+    font-size: 12px
+  .logo
+    +wh(40px,40px)
+    display: flex
+    align-items: center
+    justify-content: center
+    img
+      height: 35px
+      border-radius: 100%
