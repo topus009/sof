@@ -1,31 +1,15 @@
 import React from 'react';
+import moment from 'moment';
 
-const Item = ({title, logo, link, date}) => {
-  /*
-    @logo: url
-    @ling: url
-    @date: time in unix format
-  */
-
-  // formatting timestamp UNIX to UTC
-  const d = new Date();
-  d.setTime(date * 1000);
-
-  const time = [
-    d.toDateString(), // date_string
-    d.toLocaleTimeString('ru', { hour12: false }), // time_string
-  ];
-
+export default function Item({title, logo, link, date}) {
+  const time = moment.utc(date, 'X').format('YYYY MMM dddd HH:mm:ss');
   return (
     <div className='item'>
       <div className='logo'>
         <img src={logo} alt='logo'/>
       </div>
-      <div className='date'>{`${time[0]}______${time[1]}`}
-      </div>
+      <div className='date'>{time}</div>
       <a className='link' href={link} target='_blank'>{title}</a>
     </div>
   )
-}
-
-export default Item;
+};

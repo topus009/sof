@@ -1,5 +1,5 @@
 export default function preloadData() {
-  const url = 'https://api.stackexchange.com/2.2/search?intitle=react&site=stackoverflow';
+  const url = 'https://api.stackexchange.com/2.2/search?intitle=js&site=stackoverflow';
   return request(url);
 }
     

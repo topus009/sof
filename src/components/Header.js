@@ -2,22 +2,15 @@ import React from 'react';
 import inc from '../images/sort_inc.png';
 import desc from '../images/sort_desc.png';
 
-const Header = ({handle_sort, order}) => {
-  /*
-    @handle_sort: func
-    @order: string
-  */
+export default function Header({toggleSort, order}) {
   return (
     <div className='header'>
       <div
         className='sort'
-        // toggle sorting items
-        onClick={() => handle_sort()}
-      >
+        onClick={() => toggleSort()}>
         <img
           src={order === 'asc' ? inc : desc }
-          alt='sort'
-        />
+          alt='sort'/>
         <span className='sort_title'>
           {order === 'asc' ? 'По возрастанию' : 'По убыванию' }
         </span>
@@ -25,5 +18,3 @@ const Header = ({handle_sort, order}) => {
     </div>
   )
 }
-
-export default Header;

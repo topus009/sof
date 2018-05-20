@@ -13,15 +13,10 @@ const PORT = process.env.PORT || "8888";
 module.exports = {
   entry: [
     // POLYFILL: Set up an ES6-ish environment
-    // 'babel-polyfill',  // The entire babel-polyfill
-    // Or pick es6 features needed (included into babel-polyfill)
-    'core-js/fn/promise',
-    'core-js/es6/object',
-    'core-js/es6/array',
-
+    'babel-polyfill',  // The entire babel-polyfill
     './src/index.jsx', // your app's entry point
   ],
-  devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'public'),

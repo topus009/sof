@@ -23,7 +23,8 @@ module.exports = [
   {
     test: /\.jsx?$/,
     include: path.resolve(__dirname, 'src'),
-    loader: "babel-loader",
+    loader: 'babel-loader?compact=false',
+    exclude: /node_modules/,
     options: {
       // This is a feature of `babel-loader` for Webpack (not Babel itself).
       // It enables caching results in ./node_modules/.cache/babel-loader/
